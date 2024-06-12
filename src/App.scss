@@ -1,0 +1,9 @@
+@use './styles/partials/fonts';
+@use './styles/partials/variables' as *;
+
+html, 
+body {
+  font-family: "Avenir";
+  margin:0;
+  background-color: $yellow;
+}

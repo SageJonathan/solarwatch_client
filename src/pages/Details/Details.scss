@@ -1,91 +1,83 @@
-// @use '../style/partials/mixins' as *;
-// @use '../styles/partials/variables' as *;
+@use '../styles/partials/fonts' as *;
 @use '../styles/partials/variables' as *;
+@use "../styles/partials/mixins" as *;
 
 
-.main{
+.main {
+  padding: 50px;
+
+  &__heading {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__head-detail {
+    color: white;
+  }
+
+  &__information {
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem;
+  }
+
+  #main__modifier {
+    border: none;
+    border-radius: 5px;
+    padding: 16px;
+    width: 100%;
+    height: 20vh;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__sunrise {
+    background-color: $orange;
+  }
+  &__sunset {
+    background-color: $light-purple;
+  }
+  &__sunlight-hours {
+    background-color: $pink;
+  }
+
+  #main__modifier2 {
+    // @include text-style(16px, 24px, 700);
+    color: white;
+  }
+
+  #main__modifier3 {
+    padding-top: 20px;
+    // @include text-style(12px, 18px, 500);
+    color: white;
+  }
+
+  &__weather-forecast {
+    height: 25vh;
+    margin: 3rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__forecast-container {
+    width: 50%;
+    height: 20vh;
+    border: 1px solid white;
+    border-radius: 5px;
     padding: 50px;
-
-    &__heading{
-        
-        height: 25vh;
-        display: flex;
-        justify-content: center;
-        align-items: center
-    }
-
-
-
-    &__head-detail{
-        // @include text-style(40px, 50px, 700);
-        color: white;
-    }
-
-    &__information{
-        width: 100%;
-        height: 25vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        // margin-top: 3rem;
-        // margin-bottom: 3rem;
-        padding: 6rem;
-    }
-
-    #main__modifier{
-        border: none;
-        border-radius: 5px;
-        padding: 16px;
-        width: 100%;
-        height: 20vh;
-        margin: 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &__sunrise{
-        background-color: $orange;
-
-    }
-    &__sunset{
-        background-color: $light-purple;
-    }
-    &__sunlight-hours{
-        background-color: $pink;
-    }
-
-    #main__modifier2{
-        // @include text-style(16px, 24px, 700);
-        color: white;
-    }
-
-    #main__modifier3{
-        padding-top: 20px;
-        // @include text-style(12px, 18px, 500);
-        color: white;
-    }
-
-    &__weather-forecast{
-        height: 25vh;
-        margin: 3rem;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__forecast-container{
-        width: 50%;
-        height: 20vh;
-        border: 1px solid white;
-        border-radius: 5px;
-        padding: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 0.5rem;
-    }
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
 }

@@ -1,0 +1,25 @@
+@use '../styles/partials/fonts' as *;
+@use '../styles/partials/variables' as *;
+@use "../styles/partials/mixins" as *;
+
+.about {
+    height:fit-content;
+    margin:0;
+    padding:2rem;
+    padding-top: 4rem;
+
+    &__title {
+        margin-top:0;
+        font-size: 3rem;
+        font-weight:600;
+        color:$dark-purple;
+        margin-bottom: -1rem;
+    }
+
+    &__writing {
+        font-size: 1rem;
+        color:$dark-purple;
+        padding-bottom: 4rem;
+        border-bottom: 0.2rem solid $pink;
+    }
+}

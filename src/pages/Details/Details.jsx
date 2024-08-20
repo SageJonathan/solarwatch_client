@@ -13,7 +13,6 @@ function WeatherDetail() {
                     Sunrise and Sunset 
                 </h1>
             </div>
-
             <div className="main__information">
                 <div className="main__sunrise" id="main__modifier">
                     <h3 className="main__sunrise-head">
@@ -23,7 +22,6 @@ function WeatherDetail() {
                         {weatherData.sunrise}
                     </p>
                 </div>
-
                 <div className="main__sunset" id="main__modifier">
                     <h3 className="main__sunset-head" id="main__modifier2">
                         SUNSET
@@ -49,9 +47,6 @@ function WeatherDetail() {
                 </h3>
 
                 <div className="main__forecast-container" id="main__modifier2">
-                    {/* <p className="main__forecast-celsius" id="main__modifier3">
-                        17
-                    </p>  */}
                     <p className="main__forecast-detail" id="main__modifier3">
                         {weatherData.weather}
                     </p>  

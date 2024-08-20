@@ -1,3 +1,4 @@
+import exp from "constants";
 import "./About.scss";
 
 function About() {
@@ -19,3 +20,5 @@ function About() {
     </div>
   );
 }
+
+export default About;

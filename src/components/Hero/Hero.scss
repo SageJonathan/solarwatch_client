@@ -1,9 +1,10 @@
-@use '../styles/partials/fonts' as *;
-@use '../styles/partials/variables' as *;
-@use "../styles/partials/mixins" as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/mixins" as *;
+
 
 .hero {
-    background: url("../assets/images/hero.jpg");
+    background: url("../../assets/images/hero.jpg");
     background-position: center;
     background-size: cover;
     height: 25rem;

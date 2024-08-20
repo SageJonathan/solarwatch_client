@@ -1,22 +1,21 @@
-import Hero from "../../components/Hero";
-import About from "../../components/About";
+import Hero from "../../components/Hero/Hero";
+import About from "../../components/About/About";
 import Search from "../../components/Search/Search";
-import "./Landing.scss";
 import Cards from "../../components/Cards/Cards";
+import "./Landing.scss";
 
 
-const baseUrl = import.meta.env.VITE_BASE_URL;
 
-function HomePage() {
+
+function Landing() {
     return (
-    <>
-     <Hero />
-     <About />
-     <Search />
-     <Cards />
-    </>
-
+<>
+<Hero />
+<About />
+<Search />
+<Cards />
+</>
     );
 }
 
-export default HomePage;
+export default Landing;

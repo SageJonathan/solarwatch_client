@@ -1,13 +1,13 @@
 import './App.scss'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import Header from './components/Header/Header'
-import WeatherDetail from './pages/WeatherDetails'
+import HomePage from './pages/Landing/Landing'
+import Nav from './components/Nav/Nav'
+import WeatherDetail from './pages/Details/Details'
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Nav />
       <Routes>
         <Route path="/" element={<HomePage />}></Route> 
         <Route path="/weather/:mountainId" element={<WeatherDetail/>}></Route>

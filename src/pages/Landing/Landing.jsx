@@ -1,6 +1,6 @@
-import "./HomePage.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Landing.scss";
 import axios from "axios";
 
 

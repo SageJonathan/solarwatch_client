@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-
-import "./WeatherDetails.scss";
+import "./Details.scss";
 
 function WeatherDetail() {
     const location = useLocation();

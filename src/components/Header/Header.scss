@@ -2,27 +2,30 @@
 @use '../../styles/partials/variables' as *;
 
 
-.header {
+.nav {
     height: 4rem;
     background-color: $dark-purple;
     display:flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     border-bottom: 0.1rem solid $light-purple;
+    &__container{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__img{
+        width: 3rem;
+        height: auto;
+    }
 
     &__title {
-        margin:0;
-        color:white;
-        font-size: 1.7rem;
+        padding-left: 1rem;
+        color: white;
+        font-size: 2rem;
         transition-duration: 0.5s;
         text-decoration: none;
-
-        &:hover {
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
     }
 
 }

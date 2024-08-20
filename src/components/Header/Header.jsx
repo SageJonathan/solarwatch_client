@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 
 function Header() {
     return (
-        <section className="header">
+        <section className="nav">
             <Link to={`/`}>
-                <p className="header__title"> ☀️ Solar Watch</p>
+            <div className="nav__container">
+                <img className= "nav__img" src="/solar.png" alt="solar watch logo" />
+                <p className="nav__title"> Solar Watch</p>
+            </div>
             </Link>
-
         </section>
     )
 }

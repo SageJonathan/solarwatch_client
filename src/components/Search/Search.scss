@@ -38,6 +38,7 @@
     }
 
     &__input {
+        background-color: aliceblue;
         margin-top: 1rem;
         margin-bottom: 3rem;
         margin-right: 1rem;
@@ -70,4 +71,17 @@
             font-size: 1.05rem;
         }
     }
+}
+.test{
+    display: flex;
+}
+.test2{
+    display: flex;
+}
+.test3{
+    display: flex;
+}
+.img{
+    width: 6rem;
+    height: auto;
 }

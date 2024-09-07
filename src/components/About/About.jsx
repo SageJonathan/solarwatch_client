@@ -14,8 +14,7 @@ function About() {
         up-to-the-minute weather information, so you’re always prepared for
         whatever Mother Nature throws your way. Whether you’re scaling mountains
         or exploring serene trails, Solar Watch is your essential guide to
-        making every hike safe, enjoyable, and unforgettable. Download now and
-        let the journey begin!
+        making every hike safe, enjoyable, and unforgettable. 
       </p>
     </div>
   );

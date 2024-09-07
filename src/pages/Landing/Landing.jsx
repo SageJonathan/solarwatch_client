@@ -13,7 +13,7 @@ function Landing() {
 <Hero />
 <About />
 <Search />
-<Cards />
+{/* <Cards /> */}
 </>
     );
 }

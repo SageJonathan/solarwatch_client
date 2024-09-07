@@ -4,26 +4,27 @@
 
 
 .nav {
-    height: 4rem;
+    height: 5rem;
     background-color: $dark-purple;
+    // background-color: black;
     display:flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    border-bottom: 0.1rem solid $light-purple;
+    // text-decoration: none;
+    // border-bottom: 0.1rem solid $light-purple;
     &__container{
         display: flex;
         align-items: center;
         cursor: pointer;
     }
     &__img{
-        width: 3rem;
+        width: 4rem;
         height: auto;
     }
 
     &__title {
         padding-left: 1rem;
-        color: white;
+        color: $font-white;
         font-size: 2rem;
         transition-duration: 0.5s;
         text-decoration: none;

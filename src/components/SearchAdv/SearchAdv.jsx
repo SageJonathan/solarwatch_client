@@ -44,18 +44,10 @@ function SearchAdv() {
 
   return (
     <>
-      <form className="search" onSubmit={handleFormSubmit}>
-        <p className="search__instruction search__instruction--adv">Know the cooridnates?</p>
+    <div className="search">
+      <form className="search__form" onSubmit={handleFormSubmit}>
+        <p className="search__prompt">Know the cooridnates?</p>
         <div className="search__container">
-          <div className="longitude">
-            <label className="search__label">Longitude:</label>
-            <input
-              className="search__input"
-              onChange={handleLongitude}
-              value={longitude}
-              required
-            />
-          </div>
           <div className="latitude">
             <label className="search__label">Latitude:</label>
             <input
@@ -65,9 +57,19 @@ function SearchAdv() {
               required
             />
           </div>
+          <div className="longitude">
+            <label className="search__label">Longitude:</label>
+            <input
+              className="search__input"
+              onChange={handleLongitude}
+              value={longitude}
+              required
+            />
+          </div>
         </div>
         <button className="search__button">Submit</button>
       </form>
+      </div>
     </>
   );
 }

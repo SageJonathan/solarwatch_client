@@ -10,10 +10,9 @@ function Search() {
 
     return (
         <>
-        <div className="search">
-          <div className="search__form-wrapper">
+          <div className="search">
             <form className="search__form">
-              <p className="search__instruction">Enter a location's name</p>
+              <p className="search__prompt">Enter a location's name</p>
               <div className="search__input-group">
                 <label className="search__label">Location:</label>
                 <input
@@ -26,7 +25,6 @@ function Search() {
               <button className="search__button">Submit</button>
             </form>
           </div>
-        </div>
       </>
     );
 }

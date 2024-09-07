@@ -4,14 +4,11 @@
 
 .about {
     height:fit-content;
-    padding:2rem;
-    padding-top: 4rem;
-
+    padding:1rem 2rem;
     &__title {
         font-size: 3rem;
         font-weight:600;
         color:$dark-purple;
-        margin-bottom: 1rem;
     }
 
     &__writing {

@@ -5,13 +5,13 @@
 .about {
     height:fit-content;
     padding:1rem 2rem;
-    &__title {
+    &__header {
         font-size: 3rem;
         font-weight:600;
         color:$dark-purple;
     }
 
-    &__writing {
+    &__text {
         font-size: 1.3rem;
         line-height: 2rem;
         color:$dark-purple;

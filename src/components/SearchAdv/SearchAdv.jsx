@@ -46,7 +46,7 @@ function SearchAdv() {
     <>
     <div className="search">
       <form className="search__form" onSubmit={handleFormSubmit}>
-        <p className="search__prompt">Know the cooridnates?</p>
+        <p className="search__prompt">Look up with coordinates</p>
         <div className="search__container">
           <div className="latitude">
             <label className="search__label">Latitude:</label>
@@ -54,6 +54,7 @@ function SearchAdv() {
               className="search__input"
               onChange={handleLatitude}
               value={latitude}
+              placeholder=" 53.2811° N"
               required
             />
           </div>
@@ -63,6 +64,7 @@ function SearchAdv() {
               className="search__input"
               onChange={handleLongitude}
               value={longitude}
+              placeholder="119.1616° W"
               required
             />
           </div>

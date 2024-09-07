@@ -5,8 +5,7 @@ function SearchGps (){
     return (
         <>
          <div className="search">
-            <p className="search__prompt">Use your live location</p>
-            {/* <div className=""> */}
+            <p className="search__prompt">Use live location</p>
             <div className="search__map-container">
               <img className="search__map-icon" src={mapIcon} alt="Map Icon" />
             </div>
@@ -15,7 +14,6 @@ function SearchGps (){
               <button className="search__button">Submit</button>
             </form>
            </div>
-          {/* </div> */}
         </>
     )
 }

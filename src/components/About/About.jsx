@@ -4,8 +4,8 @@ import "./About.scss";
 function About() {
   return (
     <div className="about">
-      <p className="about__title">Who are we?</p>
-      <p className="about__writing">
+      <p className="about__header">Who are we?</p>
+      <p className="about__text">
         Step into the wild with confidence using <strong>Solar Watch</strong>,
         the premier app designed for adventurers like you. <br></br>
         <br></br>Get precise sunrise and sunset times to plan your hikes

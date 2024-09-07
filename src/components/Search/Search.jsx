@@ -12,13 +12,14 @@ function Search() {
         <>
           <div className="search">
             <form className="search__form">
-              <p className="search__prompt">Enter a location's name</p>
+              <p className="search__prompt">Look up by location</p>
               <div className="search__input-group">
-                <label className="search__label">Location:</label>
+                <label className="search__label"></label>
                 <input
                   className="search__input"
                   // onChange={}
                   // value={}
+                  placeholder="Mount Robson"
                   required
                 />
               </div>

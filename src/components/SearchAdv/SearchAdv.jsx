@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../Search/Search.scss";
+import "../SearchLocal/SearchLocal.scss";
 import "./SearchAdv.scss";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
@@ -23,7 +23,7 @@ function SearchAdv() {
 
   async function handleFormSubmit(event) {
     event.preventDefault();
-    
+
     // Validate that both latitude and longitude have been entered
     if (!latitude || !longitude) {
       alert("Please enter both latitude and longitude.");
@@ -47,36 +47,35 @@ function SearchAdv() {
     }
   }
 
-
   return (
     <>
-    <div className="search">
-      <form className="search__form" onSubmit={handleFormSubmit}>
-        <p className="search__prompt">Look up with coordinates</p>
-        <div className="search__container">
-          <div className="latitude">
-            <label className="search__label">Latitude:</label>
-            <input
-              className="search__input"
-              onChange={handleLatitude}
-              value={latitude}
-              placeholder="53.2811"
-              required
-            />
+      <div className="search">
+        <form className="search__form" onSubmit={handleFormSubmit}>
+          <p className="search__prompt">Look up with coordinates</p>
+          <div className="search__container">
+            <div className="latitude">
+              <label className="search__label">Latitude:</label>
+              <input
+                className="search__input"
+                onChange={handleLatitude}
+                value={latitude}
+                placeholder="53.2811"
+                required
+              />
+            </div>
+            <div className="longitude">
+              <label className="search__label">Longitude:</label>
+              <input
+                className="search__input"
+                onChange={handleLongitude}
+                value={longitude}
+                placeholder="119.1616"
+                required
+              />
+            </div>
           </div>
-          <div className="longitude">
-            <label className="search__label">Longitude:</label>
-            <input
-              className="search__input"
-              onChange={handleLongitude}
-              value={longitude}
-              placeholder="119.1616"
-              required
-            />
-          </div>
-        </div>
-        <button className="search__button">Submit</button>
-      </form>
+          <button className="search__button">Submit</button>
+        </form>
       </div>
     </>
   );

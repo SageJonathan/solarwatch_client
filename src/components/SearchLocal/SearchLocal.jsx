@@ -1,11 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Search.scss";
+import "./SearchLocal.scss";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
-function Search() {
+function SearchLocal() {
   
 
     return (
@@ -30,4 +30,4 @@ function Search() {
     );
 }
 
-export default Search;
+export default SearchLocal;

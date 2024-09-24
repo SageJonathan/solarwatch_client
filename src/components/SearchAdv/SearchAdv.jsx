@@ -23,24 +23,30 @@ function SearchAdv() {
 
   async function handleFormSubmit(event) {
     event.preventDefault();
+    
+    // Validate that both latitude and longitude have been entered
+    if (!latitude || !longitude) {
+      alert("Please enter both latitude and longitude.");
+      return;
+    }
+
     try {
-      const response = await axios.get(
-        "http://localhost:8080/search?lat=38.907192&lng=-77.036873",
-        {
-          params: {
-            lat: latitude,
-            lng: longitude,
-          },
-        }
-      );
-      // Handle response data as needed
+      const response = await axios.get(`${baseUrl}/solarsearch`, {
+        params: {
+          lat: latitude,
+          lng: longitude,
+        },
+      });
+
       console.log("Response from backend:", response.data);
-      // Navigate to the appropriate page with the response data
+
+      // Navigate to weather page with the response data
       navigate(`/weather`, { state: { weatherData: response.data } });
     } catch (error) {
       console.error("Error fetching data from backend:", error);
     }
   }
+
 
   return (
     <>
@@ -54,7 +60,7 @@ function SearchAdv() {
               className="search__input"
               onChange={handleLatitude}
               value={latitude}
-              placeholder=" 53.2811° N"
+              placeholder="53.2811"
               required
             />
           </div>
@@ -64,7 +70,7 @@ function SearchAdv() {
               className="search__input"
               onChange={handleLongitude}
               value={longitude}
-              placeholder="119.1616° W"
+              placeholder="119.1616"
               required
             />
           </div>

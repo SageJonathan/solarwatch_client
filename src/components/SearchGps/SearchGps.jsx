@@ -10,7 +10,6 @@ function SearchGps (){
               <img className="search__map-icon" src={mapIcon} alt="Map Icon" />
             </div>
             <form className="search__form">
-              {/* You can add inputs or controls for live location here */}
               <button className="search__button">Submit</button>
             </form>
            </div>

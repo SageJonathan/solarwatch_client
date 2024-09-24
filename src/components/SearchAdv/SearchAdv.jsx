@@ -24,7 +24,6 @@ function SearchAdv() {
   async function handleFormSubmit(event) {
     event.preventDefault();
 
-    // Validate that both latitude and longitude have been entered
     if (!latitude || !longitude) {
       alert("Please enter both latitude and longitude.");
       return;
@@ -40,7 +39,6 @@ function SearchAdv() {
 
       console.log("Response from backend:", response.data);
 
-      // Navigate to weather page with the response data
       navigate(`/weather`, { state: { weatherData: response.data } });
     } catch (error) {
       console.error("Error fetching data from backend:", error);

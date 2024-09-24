@@ -31,7 +31,7 @@ function SearchAdv() {
     }
 
     try {
-      const response = await axios.get(`${baseUrl}/solarsearch`, {
+      const response = await axios.get(`${baseUrl}/solarSearch`, {
         params: {
           lat: latitude,
           lng: longitude,

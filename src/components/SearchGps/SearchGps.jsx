@@ -65,7 +65,7 @@ function SearchGps() {
           }}
         >
           <button type="submit" className="search__button" disabled={loading}>
-            {loading ? "Fetching..." : "Submit"}
+            {loading ? "Loading..." : "Submit"}
           </button>
         </form>
         {error && <p className="search__error">{error}</p>}{" "}

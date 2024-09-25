@@ -6,8 +6,10 @@ function SolarFunction ({solarData}){
         <section className="main">
             <h1 className="main__header">
                 Solar Activity at LOCATION
+                {/* Enter switch statement to find location above return and {} in return */}
             </h1>
-        <div className="main__data main__data--row1">
+            <div className="data">
+        <div className="data__row">
             <div className="data__container">
                 <h3 className="data__header">
                     Sunrise
@@ -24,17 +26,8 @@ function SolarFunction ({solarData}){
                     {solarData.sunset}
                 </p>
             </div>
-
-            <div className="data__container">
-                <h3 className="data__header">
-                    Total Daylight
-                </h3>
-                <p className="data__info">
-                    {solarData.day_length}
-                </p>
-            </div>
         </div>
-        <div className="main__data main__data--row2">
+        <div className="data__row">
         <div className="data__container">
                 <h3 className="data__header">
                     First Light
@@ -52,7 +45,7 @@ function SolarFunction ({solarData}){
                 </p>
             </div>
         </div>
-        <div className="main__data main__data--row3">
+        <div className="data__row">
         <div className="data__container">
                 <h3 className="data__header">
                     Dawn
@@ -70,13 +63,13 @@ function SolarFunction ({solarData}){
                 </p>
             </div>
         </div>
-        <div className="main__data main__data--row4">
+        <div className="data__row">
         <div className="data__container">
                 <h3 className="data__header">
                     Solar Noon
                 </h3>
                 <p className="data__info">
-                    {solarData.solar__noon}
+                    {solarData.solar_noon}
                 </p>
             </div>
             <div className="data__container">
@@ -88,6 +81,15 @@ function SolarFunction ({solarData}){
                 </p>
             </div>
         </div>
+        </div>
+         <div className="data__container">
+                <h3 className="data__header">
+                    Total Daylight
+                </h3>
+                <p className="data__info">
+                    {solarData.day_length}
+                </p>
+            </div>
         </section>
     )
 }

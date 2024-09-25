@@ -4,21 +4,35 @@
 
 
 .main{
-    &__heaeder{
-
-    }
-    &__data{
-        
+    background-color:antiquewhite ;
+    height: 100vh;
+    &__header{
+        text-align: center;
+        font-size: 2rem;
+        padding: 3rem;
     }
 }
 .data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__row{
+        display: flex;
+    }
     &__container{
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include tablet{
+            padding: 1rem;
+        }
     }
     &__header{
-
+        padding: 1rem;
+        font-size: 1.5rem;
     }
     &__info{
+        padding: 1rem;
 
     }
 }

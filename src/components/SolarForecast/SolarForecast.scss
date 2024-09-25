@@ -1,3 +1,24 @@
 @use '../../styles/partials/fonts' ;
 @use '../../styles/partials/variables' as *;
 @use "../../styles/partials/mixins" as *;
+
+
+.main{
+    &__heaeder{
+
+    }
+    &__data{
+        
+    }
+}
+.data{
+    &__container{
+
+    }
+    &__header{
+
+    }
+    &__info{
+
+    }
+}

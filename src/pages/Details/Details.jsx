@@ -9,10 +9,10 @@ function WeatherDetail() {
     const { solarData } = location.state;
 
     return (
-       <>
+       <div className='container'>
        <Solar solarData={solarData} />
        <Weather />
-       </>
+       </div>
         
     );
 }

@@ -4,8 +4,6 @@
 
 
 .main{
-    background-color:antiquewhite ;
-    height: 100vh;
     &__header{
         text-align: center;
         font-size: 2rem;
@@ -23,16 +21,21 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0.2rem;
         @include tablet{
-            padding: 1rem;
+            margin: 1rem;
         }
     }
     &__header{
         padding: 1rem;
         font-size: 1.5rem;
+        color: $dark-purple;
     }
     &__info{
         padding: 1rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: $light-purple;
 
     }
 }

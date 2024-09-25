@@ -1,10 +1,11 @@
 import "./SolarForecast.scss";
 
 function SolarFunction ({solarData}){
+
     return (
         <section className="main">
             <h1 className="main__header">
-                Solar Activity at ENTER LOCATION
+                Solar Activity at LOCATION
             </h1>
         <div className="main__data main__data--row1">
             <div className="data__container">

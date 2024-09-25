@@ -39,7 +39,7 @@ function SearchLocal() {
       });
       const { sunrise, sunset, day_length } = sunResponse.data;
 
-      navigate(`/weather`, { state: { weatherData: sunResponse.data } });
+      navigate(`/weather`, { state: { solarData: sunResponse.data } });
     } catch (error) {
       console.error("Error fetching data:", error);
       alert("Error fetching data. Please try again.");

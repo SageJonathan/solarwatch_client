@@ -4,7 +4,7 @@ import "./Details.scss";
 
 function WeatherDetail() {
     const location = useLocation();
-    const { weatherData } = location.state;
+    const { solarData } = location.state;
 
     return (
         <section className="main">
@@ -19,7 +19,7 @@ function WeatherDetail() {
                         SUNRISE
                     </h3>
                     <p className="main__sunrise-time" id="main__modifier3">
-                        {weatherData.sunrise}
+                        {solarData.sunrise}
                     </p>
                 </div>
                 <div className="main__sunset" id="main__modifier">
@@ -27,7 +27,7 @@ function WeatherDetail() {
                         SUNSET
                     </h3>
                     <p className="main__sunset-time" id="main__modifier3">
-                        {weatherData.sunset}
+                        {solarData.sunset}
                     </p>
                 </div>
 
@@ -36,22 +36,22 @@ function WeatherDetail() {
                         HOURS
                     </h3>
                     <p className="main__sunlight-hours-time" id="main__modifier3">
-                        {weatherData.day_length}
+                        {solarData.day_length}
                     </p>
                 </div>
             </div>
 
-            <div className="main__weather-forecast">
+            {/* <div className="main__weather-forecast">
                 <h3 className="main__forecast-head" id="main__modifier2">
                     WEATHER FORECAST
                 </h3>
 
                 <div className="main__forecast-container" id="main__modifier2">
                     <p className="main__forecast-detail" id="main__modifier3">
-                        {weatherData.weather}
+                        {solarData.weather}
                     </p>  
                 </div>        
-            </div>
+            </div> */}
         </section>
     );
 }

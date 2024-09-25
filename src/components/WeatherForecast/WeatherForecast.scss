@@ -1,3 +1,19 @@
 @use '../../styles/partials/fonts' ;
 @use '../../styles/partials/variables' as *;
 @use "../../styles/partials/mixins" as *;
+
+.button{
+    height: 4rem;
+    width: auto;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light-purple;
+    color: white;
+    font-size: 1.5rem;
+    &__container{
+        outline: 2px soild $dark-purple;
+    }
+}

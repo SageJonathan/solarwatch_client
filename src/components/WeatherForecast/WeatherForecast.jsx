@@ -4,7 +4,7 @@ function WeatherForecast (){
     return (
         <>
         <div className="button__contianer">
-        <button className="button"> Press for weather forecast</button>
+        <button className="button"> Access Weather Forecast</button>
         </div>
         </>
     )

@@ -82,7 +82,7 @@ function SolarFunction ({solarData}){
             </div>
         </div>
         </div>
-         <div className="data__container">
+         <div className="data__container data__container--day-length">
                 <h3 className="data__header">
                     Total Daylight
                 </h3>

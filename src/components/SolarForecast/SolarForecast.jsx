@@ -16,7 +16,6 @@ function SolarFunction ({solarData,locationName,coordinates}){
         <section className="main">
             <h1 className="main__header">
                 Solar Activity at {getLocationText()}
-               
             </h1>
             <div className="data">
         <div className="data__row">

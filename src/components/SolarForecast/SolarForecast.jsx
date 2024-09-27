@@ -1,11 +1,12 @@
 import "./SolarForecast.scss";
 
-function SolarFunction ({solarData}){
+function SolarFunction ({solarData,locationName}){
+    // Function to display locationName or lat long, or live location based on inuput available
 
     return (
         <section className="main">
             <h1 className="main__header">
-                Solar Activity at LOCATION
+                Solar Activity at {locationName}
                 {/* Enter switch statement to find location above return and {} in return */}
             </h1>
             <div className="data">

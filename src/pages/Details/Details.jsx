@@ -7,10 +7,11 @@ import Weather from "../../components/WeatherForecast/WeatherForecast";
 function WeatherDetail() {
     const location = useLocation();
     const { solarData } = location.state;
+    const {locationName} = location.state;
 
     return (
        <div className='container'>
-       <Solar solarData={solarData} />
+       <Solar solarData={solarData} locationName={locationName} />
        <Weather />
        </div>
         

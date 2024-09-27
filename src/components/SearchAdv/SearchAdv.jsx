@@ -39,7 +39,7 @@ function SearchAdv() {
 
       console.log("Response from backend:", response.data);
 
-      navigate(`/weather`, { state: { solarData: response.data } });
+      navigate(`/weather`, { state: { solarData: response.data, longitude:longitude, latitude:latitude } });
     } catch (error) {
       console.error("Error fetching data from backend:", error);
     }

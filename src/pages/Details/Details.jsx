@@ -8,10 +8,11 @@ function WeatherDetail() {
     const location = useLocation();
     const { solarData } = location.state;
     const {locationName} = location.state;
-    const {coordinates} =location.state;
+    const {advCoordinates} =location.state;
+    const {gpsCoordiantes}=location.state
     return (
        <div className='container'>
-       <Solar solarData={solarData} locationName={locationName} coordinates={coordinates}/>
+       <Solar solarData={solarData} locationName={locationName} coordinates={advCoordinates} gpscoords={gpsCoordiantes}/>
        <Weather />
        </div>
         

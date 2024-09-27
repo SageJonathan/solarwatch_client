@@ -27,7 +27,7 @@ function SearchGps() {
                 lng: longitude,
               },
             });
-            navigate("/weather", { state: { solarData: response.data}});
+            navigate("/weather", { state: { solarData: response.data, gpsCoordinates: position.coords}});
           } catch (error) {
             console.error("Error fetching solar data:", error);
             setError("Failed to fetch sunrise data. Please try again."); 

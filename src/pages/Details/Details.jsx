@@ -1,22 +1,30 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React from "react";
+import { useLocation } from "react-router-dom";
 import "./Details.scss";
 import Solar from "../../components/SolarForecast/SolarForecast";
 import Weather from "../../components/WeatherForecast/WeatherForecast";
 
 function WeatherDetail() {
-    const location = useLocation();
-    const { solarData } = location.state;
-    const {locationName} = location.state;
-    const {advCoordinates} =location.state;
-    const {gpsCoordiantes}=location.state
-    return (
-       <div className='container'>
-       <Solar solarData={solarData} locationName={locationName} coordinates={advCoordinates} gpscoords={gpsCoordiantes}/>
-       <Weather />
-       </div>
-        
-    );
+  const location = useLocation();
+  const { solarData } = location.state;
+  const { locationName } = location.state;
+  const { localCoordinates } = location.state;
+  const { advCoordinates } = location.state;
+  const { gpsCoordiantes } = location.state;
+  return (
+    <div className="container">
+      <Solar
+        solarData={solarData}
+        locationName={locationName}
+        advCoordinates={advCoordinates}
+      />
+      <Weather
+        localCoordinates={localCoordinates}
+        gpscoords={gpsCoordiantes}
+        advCoordinates={advCoordinates}
+      />
+    </div>
+  );
 }
 
 export default WeatherDetail;

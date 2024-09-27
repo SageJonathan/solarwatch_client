@@ -1,12 +1,12 @@
 import "./SolarForecast.scss";
 
-function SolarFunction ({solarData,locationName,coordinates}){
+function SolarFunction ({solarData,locationName,advCoordinates}){
     
     const getLocationText = () => {
         if (locationName) {
             return locationName;
-        } else if (coordinates && coordinates.lat && coordinates.lng) {
-            return `${coordinates.lat}° / ${coordinates.lng}°`; 
+        } else if (advCoordinates && advCoordinates.lat && advCoordinates.lng) {
+            return `${advCoordinates.lat}° / ${advCoordinates.lng}°`; 
         } else {
             return "Live Location";
         }

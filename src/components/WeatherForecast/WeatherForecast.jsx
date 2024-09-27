@@ -1,9 +1,9 @@
 import "./WeatherForecast.scss";
 
 function WeatherForecast ({localCoordinates,advCoordinates,gpsCoordinates}){
-    const [weatherData, setWeatherData] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+    // const [weatherData, setWeatherData] = useState(null);
+    // const [loading, setLoading] = useState(false);
+    // const [error, setError] = useState(null);
 
     const getCoordinates = () => {
         let coordinates; 

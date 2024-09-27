@@ -1,13 +1,22 @@
 import "./SolarForecast.scss";
 
 function SolarFunction ({solarData,locationName,coordinates}){
-    // Function to display locationName or lat long, or live location based on inuput available
+    
+    const getLocationText = () => {
+        if (locationName) {
+            return locationName;
+        } else if (coordinates && coordinates.lat && coordinates.lng) {
+            return `${coordinates.lat}° / ${coordinates.lng}°`; 
+        } else {
+            return "Live Location";
+        }
+    };
 
     return (
         <section className="main">
             <h1 className="main__header">
-                Solar Activity at {coordinates.lat} & {coordinates.lng}
-                {/* Enter switch statement to find location above return and {} in return */}
+                Solar Activity at {getLocationText()}
+               
             </h1>
             <div className="data">
         <div className="data__row">

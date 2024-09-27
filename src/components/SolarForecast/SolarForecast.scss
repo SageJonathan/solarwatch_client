@@ -7,7 +7,7 @@
     &__header{
         text-align: center;
         font-size: 2rem;
-        padding: 3rem;
+        padding: 3rem 0rem 1rem 0rem;
     }
 }
 .data{
@@ -32,12 +32,11 @@
         }
     }
     &__header{
-        padding: 1rem;
         font-size: 1.5rem;
         color: $dark-purple;
     }
     &__info{
-        padding: 1rem;
+        padding: 1rem 2rem;
         font-size: 1.2rem;
         font-weight: 700;
         color: $light-purple;

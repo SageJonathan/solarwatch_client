@@ -56,7 +56,6 @@
     color: white;
     font-size: 1rem;
     font-weight: 700;
-
     &:hover {
       cursor: pointer;
       background-color: $pink;
@@ -72,6 +71,7 @@
 
   &__map-container {
     align-self: center;
+    margin-bottom: 0.5rem;
   }
 
   &__map-icon {

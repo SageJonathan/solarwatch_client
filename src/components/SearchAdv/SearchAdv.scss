@@ -2,3 +2,26 @@
 @use '../../styles/partials/variables' as *;
 @use "../../styles/partials/mixins" as *;
 
+
+.search__container--adv{
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+        flex-direction: row;
+    }
+}
+.search__button--adv{
+    margin-top: 6rem;
+    @include tablet{
+        margin-top: 0;
+    }
+}
+
+.latitude, .longitude{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+}
+

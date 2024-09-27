@@ -52,7 +52,7 @@ function SearchLocal() {
     <>
       <div className="search">
         <form className="search__form" onSubmit={handleFormSubmit}>
-          <p className="search__prompt">Look up by location</p>
+          <p className="search__prompt">Look up location</p>
           <div className="search__input-group">
             <label className="search__label"></label>
             <input

@@ -47,7 +47,7 @@ function SearchAdv() {
     <>
       <div className="search">
         <form className="search__form" onSubmit={handleFormSubmit}>
-          <p className="search__prompt">Look up with coordinates</p>
+          <p className="search__prompt">Look up coordinates</p>
           <div className="search__container search__container--adv">
             <div className="latitude">
               <label className="search__label">Latitude:</label>

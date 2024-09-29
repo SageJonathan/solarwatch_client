@@ -72,7 +72,10 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
       {error && <p className="error">{error}</p>}
       {weatherData && (
         <div className="weather">
-          <h2 className="weather__header">Current Weather: {weatherData.weather} </h2>
+          <div className="weather__header-container">
+          <h2 className="weather__header">Current Weather</h2>
+          <p className="data__info">{weatherData.weather} </p>
+          </div>
           <div className="data">
           {rows.map((row, index) => (
           <div className="data__row" key={index}>

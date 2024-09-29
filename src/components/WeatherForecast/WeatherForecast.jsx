@@ -38,8 +38,8 @@ function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
     try {
       const response = await axios.get(`${baseUrl}/weatherSearch`, {
         params: {
-          lat: coordinates.latitude,
-          lng: coordinates.longitude,
+          lat: coordinates.latitude || coordinates.lat,
+          lng: coordinates.longitude || coordinates.lng,
           // Issue might be in the drilling. 3 seperate sources. 
         },
       });

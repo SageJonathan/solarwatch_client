@@ -35,7 +35,7 @@ function SearchAdv() {
         params: coordinates,
       });
 
-      navigate(`/weather`, { state: { solarData: response.data, coordinates:coordinates} });
+      navigate(`/weather`, { state: { solarData: response.data, advcoordinates:coordinates} });
     } catch (error) {
       console.error("Error fetching data from backend:", error);
     }

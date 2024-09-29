@@ -5,8 +5,8 @@ function SolarFunction ({solarData,locationName,advCoordinates}){
     const getLocationText = () => {
         if (locationName) {
             return locationName;
-        } else if (advCoordinates && advCoordinates.lat && advCoordinates.lng) {
-            return `${advCoordinates.lat}° / ${advCoordinates.lng}°`; 
+        } else if (advCoordinates && advCoordinates.latitude && advCoordinates.longitude) {
+            return `${advCoordinates.latitude}° / ${advCoordinates.longitude}°`; 
         } else {
             return "Live Location";
         }

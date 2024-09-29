@@ -30,12 +30,14 @@ function SearchAdv() {
     }
 
     try {
-      const coordinates = { lat: latitude, lng: longitude };
       const response = await axios.get(`${baseUrl}/solarSearch`, {
-        params: coordinates,
+        params: { 
+          lat: latitude, 
+          lng: longitude,
+        },
       });
 
-      navigate(`/weather`, { state: { solarData: response.data, advcoordinates:coordinates} });
+      navigate(`/weather`, { state: { solarData: response.data, advCoordinates: {latitude,longitude }} });
     } catch (error) {
       console.error("Error fetching data from backend:", error);
     }

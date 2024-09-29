@@ -40,7 +40,6 @@ function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
         params: {
           lat: coordinates.latitude || coordinates.lat,
           lng: coordinates.longitude || coordinates.lng,
-          // Issue might be in the drilling. 3 seperate sources. 
         },
       });
       setWeatherData(response.data);

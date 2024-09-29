@@ -73,15 +73,15 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
       {weatherData && (
         <div className="weather">
           <div className="weather__header-container">
-          <h2 className="weather__header">Current Weather</h2>
+          <h2 className="weather__header">Weather</h2>
           <p className="data__info">{weatherData.weather} </p>
           </div>
           <div className="data">
           {rows.map((row, index) => (
-          <div className="data__row" key={index}>
+          <div className="data__row data__row--weather" key={index}>
             {row.map((info) => (
-              <div className="data__container" key={info.label}>
-                <h3 className="data__header">{info.label}</h3>
+              <div className="data__container data__container--weather" key={info.label}>
+                <h3 className="data__header data__header--weather">{info.label}</h3>
                 <p className="data__info">{info.value}</p>
               </div>
             ))}

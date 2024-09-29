@@ -25,5 +25,15 @@
         align-items: center;   
         text-decoration: underline;
         padding: 1rem;
+        margin: 0.2rem;
+    }
+}
+.data{
+    display: flex;
+    &__container--weather{
+        padding: 0.5rem;
+    }
+    &__header--weather{
+       margin: 0rem 0.7rem;
     }
 }

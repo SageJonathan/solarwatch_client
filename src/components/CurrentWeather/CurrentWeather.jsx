@@ -1,10 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import "./WeatherForecast.scss";
+import "./CurrentWeather.scss";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
-function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
+function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -60,18 +60,18 @@ function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
           onClick={handleButtonClick}
           disabled={loading}
         >
-          {loading ? "Loading..." : "Access Weather Forecast"}
+          {loading ? "Loading..." : "Access Live Weather"}
         </button>
       </div>
 
       {error && <p className="error">{error}</p>}
       {weatherData && (
         <div className="weather__data">
-          <h2>Weather Forecast</h2>
+          <h2>Current Weather</h2>
         </div>
       )}
     </>
   );
 }
 
-export default WeatherForecast;
+export default CurrentWeather;

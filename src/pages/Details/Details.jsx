@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import "./Details.scss";
 import Solar from "../../components/SolarForecast/SolarForecast";
-import Weather from "../../components/WeatherForecast/WeatherForecast";
+import CurrentWeather from "../../components/CurrentWeather/CurrentWeather";
 
 function WeatherDetail() {
   const location = useLocation();
@@ -18,7 +18,7 @@ function WeatherDetail() {
         locationName={locationName}
         advCoordinates={advCoordinates}
       />
-      <Weather
+      <CurrentWeather
         localCoordinates={localCoordinates}
         gpsCoordinates={gpsCoordinates}
         advCoordinates={advCoordinates}

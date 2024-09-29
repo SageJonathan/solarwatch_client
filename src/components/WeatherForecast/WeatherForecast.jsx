@@ -69,7 +69,6 @@ function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
       {weatherData && (
         <div className="weather__data">
           <h2>Weather Forecast</h2>
-          <p>Temperature: {weatherData.temperature} °C</p>
         </div>
       )}
     </>

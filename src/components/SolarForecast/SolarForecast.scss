@@ -50,6 +50,9 @@
         @include tablet{
             margin: 1rem;
         }
+        @include desktop{
+            margin: 1.3rem 0.5rem;
+        }
     }
     &__header{
         font-size: 1.5rem;

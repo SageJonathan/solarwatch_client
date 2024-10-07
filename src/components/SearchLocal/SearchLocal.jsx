@@ -10,6 +10,10 @@ function SearchLocal() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  function capitalizeFirstLetter(location) {
+    return location.charAt(0).toUpperCase() + location.slice(1).toLowerCase();
+  }
+
   function handleLocation(event) {
     event.preventDefault();
     setLocation(event.target.value);
@@ -22,14 +26,14 @@ function SearchLocal() {
       alert("Please enter a location");
       return;
     }
-
+      const formattedLocation = capitalizeFirstLetter(location);
     setLoading(true);
 
     try {
       const coordinatesResponse = await axios.get(
         `${baseUrl}/coordinateSearch`,
         {
-          params: { location },
+          params: { location: formattedLocation },
         }
       );
       const { lat, lng } = coordinatesResponse.data;
@@ -39,7 +43,7 @@ function SearchLocal() {
       });
       const { sunrise, sunset, day_length } = sunResponse.data;
 
-      navigate(`/weather`, { state: { solarData: sunResponse.data, locationName: location, localCoordinates: { lat, lng } } });
+      navigate(`/weather`, { state: { solarData: sunResponse.data, locationName: formattedLocation, localCoordinates: { lat, lng } } });
     } catch (error) {
       console.error("Error fetching data:", error);
       alert("Error fetching data. Please try again.");

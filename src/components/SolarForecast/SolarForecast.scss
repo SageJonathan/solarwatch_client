@@ -10,12 +10,20 @@
         padding: 3rem 0rem 1rem 0rem;
     }
 }
+// Styles Effect Current Weather 
 .data{
     display: flex;
     flex-direction: column;
     align-items: center;
+        @include tablet{
+            flex-direction: row;
+        }
     &__row{
         display: flex;
+        @include tablet{
+            // display: block;
+            flex-direction: column;
+        }
     }
     &__container{
         display: flex;
@@ -23,6 +31,7 @@
         align-items: center;
         margin: 0.2rem;
         &--day-length{
+            align-items: baseline;
             flex-direction:row;
             justify-content: center;     
             text-decoration: underline;
@@ -40,5 +49,8 @@
         font-size: 1.2rem;
         font-weight: 700;
         color: $light-purple;
+            @include tablet{
+                padding: 1rem;
+            }
     }
 }

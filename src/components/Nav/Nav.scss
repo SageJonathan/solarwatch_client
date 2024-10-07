@@ -6,12 +6,9 @@
 .nav {
     height: 5rem;
     background-color: $dark-purple;
-    // background-color: black;
     display:flex;
     justify-content: center;
     align-items: center;
-    // text-decoration: none;
-    // border-bottom: 0.1rem solid $light-purple;
     &__container{
         display: flex;
         align-items: center;

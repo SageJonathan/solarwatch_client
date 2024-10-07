@@ -1,3 +1,18 @@
 @use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/variables' as *;
 @use "../../styles/partials/mixins" as *;
+
+.footer{
+    background-color: $dark-purple;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    &__text{
+        color: white;
+        padding: 0rem 1rem;
+        @include tablet{
+             padding: 0rem 2rem;
+        }
+    }
+}

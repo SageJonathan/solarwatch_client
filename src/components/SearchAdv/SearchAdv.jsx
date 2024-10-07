@@ -21,6 +21,12 @@ function SearchAdv() {
     setLatitude(event.target.value);
   }
 
+  function sanitizeCoordinate(coordinate) {
+    let sanitizedValue = coordinate.replace(/[^0-9.-]/g, "");
+    let parsedValue = parseFloat(sanitizedValue);
+    return parsedValue;
+  }
+
   async function handleFormSubmit(event) {
     event.preventDefault();
 
@@ -29,15 +35,26 @@ function SearchAdv() {
       return;
     }
 
+    const sanitizedLatitude = sanitizeCoordinate(latitude);
+    const sanitizedLongitude = sanitizeCoordinate(longitude);
+
     try {
       const response = await axios.get(`${baseUrl}/solarSearch`, {
-        params: { 
-          lat: latitude, 
-          lng: longitude,
+        params: {
+          lat: sanitizedLatitude,
+          lng: sanitizedLongitude,
         },
       });
 
-      navigate(`/weather`, { state: { solarData: response.data, advCoordinates: {latitude,longitude }} });
+      navigate(`/weather`, {
+        state: {
+          solarData: response.data,
+          advCoordinates: {
+            latitude: sanitizedLatitude,
+            longitude: sanitizedLongitude,
+          },
+        },
+      });
     } catch (error) {
       console.error("Error fetching data from backend:", error);
     }

@@ -26,7 +26,7 @@ function SearchLocal() {
       alert("Please enter a location");
       return;
     }
-      const formattedLocation = capitalizeFirstLetter(location);
+    const formattedLocation = capitalizeFirstLetter(location);
     setLoading(true);
 
     try {
@@ -43,7 +43,13 @@ function SearchLocal() {
       });
       const { sunrise, sunset, day_length } = sunResponse.data;
 
-      navigate(`/weather`, { state: { solarData: sunResponse.data, locationName: formattedLocation, localCoordinates: { lat, lng } } });
+      navigate(`/weather`, {
+        state: {
+          solarData: sunResponse.data,
+          locationName: formattedLocation,
+          localCoordinates: { lat, lng },
+        },
+      });
     } catch (error) {
       console.error("Error fetching data:", error);
       alert("Error fetching data. Please try again.");

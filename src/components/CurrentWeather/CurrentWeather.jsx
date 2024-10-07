@@ -67,15 +67,17 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
 
   return (
     <>
-      <div className="button__container">
-        <button
-          className="button"
-          onClick={handleButtonClick}
-          disabled={loading}
-        >
-          {loading ? "Loading..." : "Access Live Weather"}
-        </button>
-      </div>
+        {!weatherData && (
+        <div className="button__container">
+          <button
+            className="button"
+            onClick={handleButtonClick}
+            disabled={loading}
+          >
+            {loading ? "Loading..." : "Access Live Weather"}
+          </button>
+        </div>
+      )}
       {error && <p className="error">{error}</p>}
       {weatherData && (
         <div className="weather">

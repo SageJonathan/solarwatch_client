@@ -78,10 +78,16 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
           </button>
         </div>
       )}
+      <div>
+      {weatherData&&(
+        <div className="weather__title-container">
+          <h2 className="weather__title">Current Weather</h2>
+        </div>
+      )}
       {error && <p className="error">{error}</p>}
       {weatherData && (
         <div className="weather">
-          <div className="weather__header-container">
+          <div className="weather__header-container weather__header-container--top">
           <h2 className="weather__header">Weather</h2>
           <p className="data__info">{capitalizeWords(weatherData.weather)}</p>
           </div>
@@ -97,8 +103,13 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
             </div>
               ))}
           </div>
+          <div className="weather__header-container weather__header-container--bottom">
+          <h2 className="weather__header">Weather</h2>
+          <p className="data__info">{capitalizeWords(weatherData.weather)}</p>
+          </div>
         </div>
       )}
+      </div>
     </>
   );
 }

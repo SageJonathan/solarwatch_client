@@ -32,7 +32,7 @@ function SolarFunction({ solarData, locationName, advCoordinates }) {
   }
 
   return (
-    <>
+    <div className="meta">
       <div className="main">
         <h1 className="main__header">Solar Activity at {getLocationText()}</h1>
       </div>
@@ -52,7 +52,7 @@ function SolarFunction({ solarData, locationName, advCoordinates }) {
         <h3 className="data__header">Total Daylight</h3>
         <p className="data__info">{solarData.day_length}</p>
       </div>
-    </>
+    </div>
   );
 }
 

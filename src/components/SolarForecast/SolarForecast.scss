@@ -2,7 +2,12 @@
 @use '../../styles/partials/variables' as *;
 @use "../../styles/partials/mixins" as *;
 
-
+.meta{
+    @include tablet{
+        display: flex;
+        flex-direction: column;
+    }
+}
 .main{
     &__header{
         text-align: center;
@@ -10,7 +15,8 @@
         padding: 3rem 0rem 1rem 0rem;
     }
 }
-// Styles Effect Current Weather 
+
+// Styles Below Effect Current Weather 
 .data{
     display: flex;
     flex-direction: column;
@@ -18,11 +24,16 @@
         @include tablet{
             flex-direction: row;
         }
+        @include desktop{
+
+        }
     &__row{
         display: flex;
         @include tablet{
-            // display: block;
             flex-direction: column;
+        }
+        @include desktop{
+
         }
     }
     &__container{

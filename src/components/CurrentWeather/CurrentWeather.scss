@@ -1,42 +1,65 @@
-@use '../../styles/partials/fonts' ;
-@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.button{
-    height: 4rem;
-    width: auto;
-    padding: 1rem;
-    margin: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $light-purple;
-    color: white;
-    font-size: 1.5rem;
-    box-shadow: .5rem .5rem 1rem $pink;
-    outline: 2px soild $dark-purple;
+.button {
+  height: 4rem;
+  width: auto;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-purple;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem $pink;
+  outline: 2px soild $dark-purple;
 }
 
-.weather{
-    &__header-container{
+.weather {
+  &__header-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    text-decoration: underline;
+    padding: 1rem;
+    margin: 0.2rem;
+    &--top {
+      display: flex;
+      @include desktop {
+        display: none;
+      }
+    }
+    &--bottom {
+      display: none;
+      @include desktop {
         display: flex;
-        flex-direction:row;
-        justify-content: center;  
-        align-items: baseline;   
-        text-decoration: underline;
-        padding: 1rem;
-        margin: 0.2rem;
+      }
     }
-}
-.data{
-    display: flex;
-    &__container--weather{
-        padding: 0.5rem;
-    }
-    &__header--weather{
-       margin: 0rem 0.7rem;
-        @include tablet{
-            margin: 0;
+  }
+//   &__title-container{
+
+//   }
+  &__title{
+        @include desktop{
+            text-align: center;
+            font-size: 2rem;
+            padding: 3rem 0rem 1rem 0rem;
         }
+  }
+}
+.data {
+  display: flex;
+  &__container--weather {
+    padding: 0.5rem;
+  }
+  &__header--weather {
+    margin: 0rem 0.7rem;
+    @include tablet {
+      margin: 0;
     }
+    @include desktop{
+    }
+  }
 }

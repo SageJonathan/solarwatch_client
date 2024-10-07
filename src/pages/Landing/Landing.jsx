@@ -3,7 +3,6 @@ import About from "../../components/About/About";
 import SearchLocal from "../../components/SearchLocal/SearchLocal";
 import SearchGps from "../../components/SearchGps/SearchGps";
 import SearchAdv from "../../components/SearchAdv/SearchAdv";
-import Cards from "../../components/Cards/Cards";
 import "./Landing.scss";
 
 function Landing() {
@@ -17,7 +16,6 @@ function Landing() {
         <SearchGps />
       </div>
       <SearchAdv />
-      {/* <Cards /> */}
     </>
   );
 }

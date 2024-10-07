@@ -59,6 +59,8 @@
 }
 .data {
   display: flex;
+  justify-content: center;
+  align-items: center;
   &__container--weather {
     padding: 0.5rem;
     @include desktop{

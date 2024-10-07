@@ -9,6 +9,13 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  function capitalizeWords(str) {
+    return str
+      .split(" ") 
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
+      .join(" "); 
+  }
+  
   const getCoordinates = () => {
     return localCoordinates || advCoordinates || gpsCoordinates || null;
   };
@@ -74,7 +81,7 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
         <div className="weather">
           <div className="weather__header-container">
           <h2 className="weather__header">Weather</h2>
-          <p className="data__info">{weatherData.weather} </p>
+          <p className="data__info">{capitalizeWords(weatherData.weather)}</p>
           </div>
           <div className="data">
           {rows.map((row, index) => (

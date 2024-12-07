@@ -67,6 +67,10 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
       rows.push(weatherInfo.slice(i, i + 2));
   }
 
+  function handleToggleDisplay(){
+    setWeatherData(null);
+  }
+
   return (
     <>
         {!weatherData && (
@@ -93,6 +97,7 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
           <div className="weather__header-container weather__header-container--top">
           <img src={undoIcon} alt="toggle weather"
           className="weather__toggle"
+          onClick={handleToggleDisplay}
            />
           <h2 className="weather__header">Weather</h2>
           <p className="data__info">{capitalizeWords(weatherData.weather)}</p>

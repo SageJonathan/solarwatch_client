@@ -3,7 +3,7 @@ import { useTooltip } from '../../utils/tooltip';
 import './SolarForecast.scss';
 import infoIcon from "../../assets/icons/info.png"; 
 
-function SolarFunction({ solarData, locationName, advCoordinates }) {
+function CurrentSolar({ solarData, locationName, advCoordinates }) {
   const getLocationText = () => {
     if (locationName) {
       return locationName;
@@ -74,4 +74,4 @@ function SolarFunction({ solarData, locationName, advCoordinates }) {
   );
 }
 
-export default SolarFunction;
+export default CurrentSolar;

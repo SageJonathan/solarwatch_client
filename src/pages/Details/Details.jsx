@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./Details.scss";
-import Solar from "../../components/SolarForecast/SolarForecast";
+import CurrentSolar from "../../components/CurrentSolar/CurrnetSolar";
 import CurrentWeather from "../../components/CurrentWeather/CurrentWeather";
 
 function WeatherDetail() {
@@ -14,7 +14,7 @@ function WeatherDetail() {
   return (
     <div className="container">
       <div className="solar">
-        <Solar
+        <CurrentSolar
           solarData={solarData}
           locationName={locationName}
           advCoordinates={advCoordinates}

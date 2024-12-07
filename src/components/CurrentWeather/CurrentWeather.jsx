@@ -3,7 +3,6 @@ import axios from "axios";
 import "./CurrentWeather.scss";
 import undoIcon from "../../assets/icons/undo.png";
 
-
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
 function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
@@ -13,11 +12,11 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
 
   function capitalizeWords(str) {
     return str
-      .split(" ") 
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
-      .join(" "); 
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
   }
-  
+
   const getCoordinates = () => {
     return localCoordinates || advCoordinates || gpsCoordinates || null;
   };
@@ -51,29 +50,37 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
     }
   };
 
-  const weatherInfo = weatherData ? [
-    { label: "Temperature", value: `${weatherData.temperature} °C` },
-    { label: "Feels Like", value: `${weatherData.feels_like} °C` },
-    { label: "Wind Speed", value: `${weatherData.wind_speed} m/s` },
-    { label: "Humidity", value: `${weatherData.humidity}%` },
-    { label: "Visibility", value: `${(weatherData.visibility / 1000)?.toFixed(2)} km` },
-    { label: "Pressure", value: `${weatherData.pressure} hPa` },
-    { label: "Cloudiness", value: `${weatherData.cloudiness}%` },
-    { label: "Rain (last 1h)", value: weatherData.rain ? `${weatherData.rain['1h']} mm` : "No rain" },
-  ] : [];
+  const weatherInfo = weatherData
+    ? [
+        { label: "Temperature", value: `${weatherData.temperature} °C` },
+        { label: "Feels Like", value: `${weatherData.feels_like} °C` },
+        { label: "Wind Speed", value: `${weatherData.wind_speed} m/s` },
+        { label: "Humidity", value: `${weatherData.humidity}%` },
+        {
+          label: "Visibility",
+          value: `${(weatherData.visibility / 1000)?.toFixed(2)} km`,
+        },
+        { label: "Pressure", value: `${weatherData.pressure} hPa` },
+        { label: "Cloudiness", value: `${weatherData.cloudiness}%` },
+        {
+          label: "Rain (last 1h)",
+          value: weatherData.rain ? `${weatherData.rain["1h"]} mm` : "No rain",
+        },
+      ]
+    : [];
 
   const rows = [];
   for (let i = 0; i < weatherInfo.length; i += 2) {
-      rows.push(weatherInfo.slice(i, i + 2));
+    rows.push(weatherInfo.slice(i, i + 2));
   }
 
-  function handleToggleDisplay(){
+  function handleToggleDisplay() {
     setWeatherData(null);
   }
 
   return (
     <>
-        {!weatherData && (
+      {!weatherData && (
         <div className="button__container">
           <button
             className="button"
@@ -85,47 +92,60 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
         </div>
       )}
       <div>
-      {weatherData&&(
-        <div className="weather__title-container">
-          <img src="" alt="" />
-          <h2 className="weather__title">Current Weather</h2>
-        </div>
-      )}
-      {error && <p className="error">{error}</p>}
-      {weatherData && (
-        <div className="weather">
-          <div className="weather__header-container weather__header-container--top">
-          <img src={undoIcon} alt="toggle weather"
-          className="weather__toggle"
-          onClick={handleToggleDisplay}
-           />
-          <h2 className="weather__header">Weather</h2>
-          <p className="data__info">{capitalizeWords(weatherData.weather)}</p>
+        {weatherData && (
+          <div className="weather__title-container">
+            <img
+              src={undoIcon}
+              alt="toggle weather"
+              className="weather__toggle"
+              onClick={handleToggleDisplay}
+            />
+            <h2 className="weather__title">Current Weather</h2>
           </div>
-          <div className="data">
-          {rows.map((row, index) => (
-          <div className="data__row data__row--weather" key={index}>
-            {row.map((info) => (
-              <div className="data__container data__container--weather" key={info.label}>
-                <h3 className="data__header data__header--weather">{info.label}</h3>
-                <p className="data__info">{info.value}</p>
-              </div>
-            ))}
+        )}
+        {error && <p className="error">{error}</p>}
+        {weatherData && (
+          <div className="weather">
+            <div className="weather__header-container weather__header-container--top">
+              <img
+                src={undoIcon}
+                alt="toggle weather"
+                className="weather__toggle"
+                onClick={handleToggleDisplay}
+              />
+              <h2 className="weather__header">Weather</h2>
+              <p className="data__info">
+                {capitalizeWords(weatherData.weather)}
+              </p>
             </div>
+            <div className="data">
+              {rows.map((row, index) => (
+                <div className="data__row data__row--weather" key={index}>
+                  {row.map((info) => (
+                    <div
+                      className="data__container data__container--weather"
+                      key={info.label}
+                    >
+                      <h3 className="data__header data__header--weather">
+                        {info.label}
+                      </h3>
+                      <p className="data__info">{info.value}</p>
+                    </div>
+                  ))}
+                </div>
               ))}
+            </div>
+            <div className="weather__header-container weather__header-container--bottom">
+              <h2 className="weather__header">Weather</h2>
+              <p className="data__info">
+                {capitalizeWords(weatherData.weather)}
+              </p>
+            </div>
           </div>
-          <div className="weather__header-container weather__header-container--bottom">
-          <h2 className="weather__header">Weather</h2>
-          <p className="data__info">{capitalizeWords(weatherData.weather)}</p>
-          </div>
-        </div>
-      )}
+        )}
       </div>
     </>
   );
 }
 
 export default CurrentWeather;
-
-
-

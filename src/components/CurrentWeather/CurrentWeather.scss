@@ -18,6 +18,11 @@
 }
 
 .weather {
+  &__toggle{
+    height: 2rem;
+    width: auto;
+    margin-right: 0.5rem;
+  }
   &__header-container {
     flex-direction: row;
     justify-content: center;

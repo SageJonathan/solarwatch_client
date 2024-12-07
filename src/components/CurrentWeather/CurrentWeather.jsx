@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./CurrentWeather.scss";
+import undoIcon from "../../assets/icons/undo.png";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -88,6 +89,7 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
       {weatherData && (
         <div className="weather">
           <div className="weather__header-container weather__header-container--top">
+          <img className="weather__toggle" src={undoIcon} alt="Toggle Weather" />
           <h2 className="weather__header">Weather</h2>
           <p className="data__info">{capitalizeWords(weatherData.weather)}</p>
           </div>

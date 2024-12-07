@@ -1,4 +1,7 @@
-import "./SolarForecast.scss";
+import React from 'react';
+import { useTooltip } from '../../utils/tooltip';  
+import './SolarForecast.scss';
+import infoIcon from "../../assets/icons/info.png"; 
 
 function SolarFunction({ solarData, locationName, advCoordinates }) {
   const getLocationText = () => {
@@ -16,14 +19,14 @@ function SolarFunction({ solarData, locationName, advCoordinates }) {
   };
 
   const solarEvents = [
-    { label: "Sunrise", value: solarData.sunrise },
-    { label: "Sunset", value: solarData.sunset },
-    { label: "First Light", value: solarData.first_light },
-    { label: "Last Light", value: solarData.last_light },
-    { label: "Dawn", value: solarData.dawn },
-    { label: "Dusk", value: solarData.dusk },
-    { label: "Solar Noon", value: solarData.solar_noon },
-    { label: "Golden Hour", value: solarData.golden_hour },
+    { label: 'Sunrise', value: solarData.sunrise, tooltip: 'When the sun rises.' },
+    { label: 'Sunset', value: solarData.sunset, tooltip: 'When the sun sets.' },
+    { label: 'First Light', value: solarData.first_light, tooltip: 'The first visible light of day.' },
+    { label: 'Last Light', value: solarData.last_light, tooltip: 'The last visible light of day.' },
+    { label: 'Dawn', value: solarData.dawn, tooltip: 'The time before sunrise when it\'s light.' },
+    { label: 'Dusk', value: solarData.dusk, tooltip: 'The time after sunset when it\'s still light.' },
+    { label: 'Solar Noon', value: solarData.solar_noon, tooltip: 'When the sun is at its highest point.' },
+    { label: 'Golden Hour', value: solarData.golden_hour, tooltip: 'The period shortly after sunrise or before sunset, ideal for photography.' },
   ];
 
   const rows = [];
@@ -39,17 +42,32 @@ function SolarFunction({ solarData, locationName, advCoordinates }) {
       <div className="data">
         {rows.map((row, index) => (
           <div className="data__row" key={index}>
-            {row.map((event) => (
-              <div className="data__container" key={event.label}>
-                <h3 className="data__header">{event.label}</h3>
-                <p className="data__info">{event.value}</p>
-              </div>
-            ))}
+            {row.map((event) => {
+              const { visible, showTooltip, hideTooltip } = useTooltip();
+
+              return (
+                <div className="data__container" key={event.label}>
+                  <div className="data__header">
+                    {event.label}
+                    <div
+                      className="info-icon"
+                      onMouseEnter={showTooltip}
+                      onMouseLeave={hideTooltip}
+                      onClick={() => visible ? hideTooltip() : showTooltip()}
+                    >
+                      <img src={infoIcon} alt="Info Icon" />
+                      {visible && <div className="tooltip__content">{event.tooltip}</div>}
+                    </div>
+                  </div>
+                  <p className="data__info">{event.value}</p>
+                </div>
+              );
+            })}
           </div>
         ))}
       </div>
       <div className="data__container data__container--day-length">
-        <h3 className="data__header">Total Daylight</h3>
+        <h3 className="data__header--annex">Total Daylight</h3>
         <p className="data__info">{solarData.day_length}</p>
       </div>
     </div>

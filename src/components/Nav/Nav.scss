@@ -13,10 +13,15 @@
     align-items: center;
     cursor: pointer;
   }
-  &__img {
+  &__logo {
     width: 4rem;
     height: auto;
     border-radius: 50%;
+  }
+  &__home{
+    position: absolute;
+    top: 1rem;         
+    right: 2rem;    
   }
 
   &__title {

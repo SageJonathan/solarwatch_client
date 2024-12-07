@@ -72,7 +72,7 @@ function SearchAdv() {
                 className="search__input"
                 onChange={handleLatitude}
                 value={latitude}
-                placeholder="ex.53.2811"
+                placeholder="53.2811"
                 required
               />
             </div>
@@ -82,7 +82,7 @@ function SearchAdv() {
                 className="search__input"
                 onChange={handleLongitude}
                 value={longitude}
-                placeholder="ex.119.1616"
+                placeholder="119.1616"
                 required
               />
             </div>

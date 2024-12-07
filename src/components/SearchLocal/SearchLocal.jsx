@@ -70,7 +70,7 @@ function SearchLocal() {
               className="search__input"
               onChange={handleLocation}
               value={location}
-              placeholder="ex.Mount Robson"
+              placeholder="Mount Robson"
               required
             />
           </div>

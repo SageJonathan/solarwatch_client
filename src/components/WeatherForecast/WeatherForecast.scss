@@ -20,6 +20,9 @@
     @include tablet {
       padding: 1rem 0.5rem;
     }
+    @include desktop{
+        padding: 1rem 3rem;
+    }
   }
   &__days {
     color: $dark-purple;

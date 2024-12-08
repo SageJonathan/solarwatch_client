@@ -13,22 +13,23 @@ function WeatherDetail() {
   const { advCoordinates } = location.state;
   const { gpsCoordinates } = location.state;
   return (
+    <div>
     <div className="container">
-      <div className="solar">
+      <div className="Csolar">
         <CurrentSolar
           solarData={solarData}
           locationName={locationName}
           advCoordinates={advCoordinates}
         />
       </div>
-      <div className="weather">
+      <div className="Cweather">
         <CurrentWeather
           localCoordinates={localCoordinates}
           gpsCoordinates={gpsCoordinates}
           advCoordinates={advCoordinates}
         />
       </div>
-      <div className="forecast">
+      <div className="Fweather">
         < WeatherForecast
           localCoordinates={localCoordinates}
           gpsCoordinates={gpsCoordinates}
@@ -36,6 +37,14 @@ function WeatherDetail() {
         />
       </div>
     </div>
+       <div className="Fweather-desktop">
+       < WeatherForecast
+         localCoordinates={localCoordinates}
+         gpsCoordinates={gpsCoordinates}
+         advCoordinates={advCoordinates}
+       />
+     </div>
+     </div>
   );
 }
 

@@ -3,6 +3,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .forecast{
+    @include tablet{
+        display: flex;
+    }
     &__title-container{
         margin-top: 1rem;
         display: flex;
@@ -14,6 +17,9 @@
     }
     &__container{
         padding: 1rem 0rem;
+        @include tablet{
+           
+        }
     }
     &__days{
         color: $dark-purple;

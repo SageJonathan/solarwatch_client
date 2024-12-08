@@ -99,11 +99,11 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
               <img
                 src={undoIcon}
                 alt="toggle weather"
-                className="weather__toggle"
+                className="weather__toggle weather__toggle--desktop"
                 onClick={handleToggleDisplay}
               />
-              <h2 className="weather__header">Weather</h2>
-              <p className="data__info">
+              <h2 className="weather__header weather__header--top">Weather</h2>
+              <p className="data__info data__info--top">
                 {capitalizeWords(weatherData.weather)}
               </p>
             </div>

@@ -27,9 +27,6 @@
     margin: 0.2rem;
     &--top {
       display: flex;
-      @include desktop {
-        display: none;
-      }
     }
     &--bottom {
       display: none;
@@ -60,6 +57,18 @@
     height: 2rem;
     width: auto;
     margin-right: 0.5rem;
+   &--desktop{
+    @include desktop{
+      position: relative;
+      right: 18rem;
+      top: 2rem;
+    }
+   }
+  }
+  &__header--top{
+    @include desktop{
+      display: none;
+    }
   }
 }
 .data {
@@ -76,6 +85,11 @@
     margin: 0rem 0.7rem;
     @include tablet {
       margin: 0;
+    }
+  }
+  &__info--top{
+    @include desktop {
+      display: none;
     }
   }
 }

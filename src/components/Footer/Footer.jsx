@@ -1,21 +1,30 @@
-import "./Footer.scss"
+import "./Footer.scss";
 
-function Footer () {
-    return (
-        <>
-        <section className="footer">
+function Footer() {
+  return (
+    <>
+      <section className="footer">
         <div className="footer__left">
-        <p className="footer__text">Contact Support</p>
+          <a href="mailto:dev@sagecodes.tech" className="footer__text">
+            Contact Support
+          </a>
         </div>
         <div className="footer__center">
-        <p className="footer__text">&copy; Solar Watch 2024</p>
+          <p className="footer__text">&copy; Solar Watch 2024</p>
         </div>
         <div className="footer__right">
-        <p className="footer__text">Donate Today</p>
+          <a
+            href="https://www.paypal.com/ncp/payment/97FLNPDTS4ECL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__text"
+          >
+            Donate Today
+          </a>
         </div>
-        </section>
-        </>
-    )
+      </section>
+    </>
+  );
 }
 
 export default Footer;

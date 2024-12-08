@@ -2,34 +2,37 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.forecast{
-    @include tablet{
-        display: flex;
+.forecast {
+  @include tablet {
+    display: flex;
+  }
+  &__title-container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: baseline;
+  }
+  &__title {
+    text-decoration: underline;
+    font-size: 2rem;
+  }
+  &__container {
+    padding: 1rem 0rem;
+    @include tablet {
+      padding: 1rem 0.5rem;
     }
-    &__title-container{
-        margin-top: 1rem;
-        display: flex;
-        align-items: baseline;
+  }
+  &__days {
+    color: $dark-purple;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  &__header {
+    padding: 0.5rem 0rem;
+    color: $light-purple;
+    font-size: 1.3rem;
+    font-weight: 800;
+    @include tablet {
+      padding: 0.8rem 0rem;
     }
-    &__title{
-        text-decoration: underline;
-        font-size: 2rem
-    }
-    &__container{
-        padding: 1rem 0rem;
-        @include tablet{
-           padding: 1rem 0.5rem;
-        }
-    }
-    &__days{
-        color: $dark-purple;
-         text-align: center;
-         font-size: 1.5rem;
-    }
-    &__header{
-        padding: 0.5rem 0rem;
-        color: $light-purple;
-        font-size: 1.3rem;
-        font-weight: 800;
-    }
+  }
 }

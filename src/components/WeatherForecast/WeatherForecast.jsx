@@ -58,7 +58,7 @@ function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
           className="button"
           disabled={loading}
         >
-          {loading ? "Loading..." : "Access 5 day forecast"}
+          {loading ? "Loading..." : "Access 4 day forecast"}
         </button>
       )}
       <div>

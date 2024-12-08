@@ -74,11 +74,9 @@ function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
               <div key={index} className="forecast__container">
                 <h3 className="forecast__days">{day.day}</h3>
                 <p className="forecast__header">Temperature: {day.averageTemperature} °C</p>
-                {/* remove decimal points  & on current weather */}
                 <p className="forecast__header">Weather: {day.weather}</p>
-                <p className="forecast__header">Visibility:{day.averageVisibility} meters</p>
-                {/* Turn above to km */}
-                <p className="forecast__header">Humidity:{day.averageHumidity}%</p>
+                <p className="forecast__header">Visibility: {(day.averageVisibility / 1000)?.toFixed(2)}km</p>
+                <p className="forecast__header">Humidity: {day.averageHumidity}%</p>
               </div>
             ))}
           </div>

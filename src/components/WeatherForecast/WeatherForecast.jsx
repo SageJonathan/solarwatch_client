@@ -6,70 +6,86 @@ import undoIcon from "../../assets/icons/undo.png";
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
 function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
-    const [weatherData, setWeatherData] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-    const getCoordinates = () => {
-        console.log(localCoordinates, advCoordinates, gpsCoordinates);
-        return localCoordinates || advCoordinates || gpsCoordinates || null;
-    };
+  const getCoordinates = () => {
+    console.log(localCoordinates, advCoordinates, gpsCoordinates);
+    return localCoordinates || advCoordinates || gpsCoordinates || null;
+  };
 
-    const handleButtonClick = () => {
-        const coordinates = getCoordinates();
-        if (coordinates) {
-            weatherApiCall(coordinates);
-        } else {
-            alert("Unable to find coordinates");
-        }
-    };
+  const handleButtonClick = () => {
+    const coordinates = getCoordinates();
+    if (coordinates) {
+      weatherApiCall(coordinates);
+    } else {
+      alert("Unable to find coordinates");
+    }
+  };
 
-    const weatherApiCall = async (coordinates) => {
-        setLoading(true);
-        setError(null);
+  const weatherApiCall = async (coordinates) => {
+    setLoading(true);
+    setError(null);
 
-        try {
-            const response = await axios.get(`${baseUrl}/forecastSearch`, { 
-                params: {
-                    lat: coordinates.latitude || coordinates.lat,
-                    lng: coordinates.longitude || coordinates.lng,
-                },
-            });
+    try {
+      const response = await axios.get(`${baseUrl}/forecastSearch`, {
+        params: {
+          lat: coordinates.latitude || coordinates.lat,
+          lng: coordinates.longitude || coordinates.lng,
+        },
+      });
 
-            setWeatherData(response.data);
-        } catch (err) {
-            console.error("Error fetching weather data:", err);
-            setError("Failed to fetch weather data. Please try again.");
-        } finally {
-            setLoading(false);
-            console.log(weatherData)
-        }
-    };
+      setWeatherData(response.data);
+    } catch (err) {
+      console.error("Error fetching weather data:", err);
+      setError("Failed to fetch weather data. Please try again.");
+    } finally {
+      setLoading(false);
+      console.log(weatherData);
+    }
+  };
 
-    return (
-        // Add conditional render through state 
-        // Add toggle icon 
-        <div className="forecast">
-        <button onClick={handleButtonClick} className="">
-            Get Weather Data
-        </button>
-        {loading && <div className="loading">Loading...</div>}
-        {error && <div className="error">{error}</div>}
+  function handleToggleDisplay() {
+    setWeatherData(null);
+  }
+
+  return (
+    <>
+      {!weatherData && (
+      <button onClick={handleButtonClick} className="button" disabled={loading}>
+        {loading ? "Loading..." : "Access 5 day forecast"}
+      </button>
+         )}
+      <div>
+        {error && <p className="error">{error}</p>}
         {weatherData && (
-            <div className="">
-                {weatherData.map((day, index) => (
-                    <div key={index} className="">
-                        <h3>{day.day}</h3>
-                        <p>Temperature: {day.averageTemperature} °C</p>
-                        <p>Weather: {day.weather}</p>
-                        <p>Visibility:{day.averageVisibility} meters</p>
-                        <p>Humidity:{day.averageHumidity}%</p>
-                    </div>
-                ))}
-            </div>
+          <div className="forecast">
+              <div className="forecast__title-container">
+            <img
+              src={undoIcon}
+              alt="toggle forecast"
+              className="weather__toggle"
+              onClick={handleToggleDisplay}
+            />
+            <h2 className="forecast__title">Forecast</h2>
+          </div>
+            {weatherData.map((day, index) => (
+              <div key={index} className="forecast__container">
+                <h3 className="forecast__days">{day.day}</h3>
+                <p className="forecast__header">Temperature: {day.averageTemperature} °C</p>
+                {/* remove decimal points  & on current weather */}
+                <p className="forecast__header">Weather: {day.weather}</p>
+                <p className="forecast__header">Visibility:{day.averageVisibility} meters</p>
+                {/* Turn above to km */}
+                <p className="forecast__header">Humidity:{day.averageHumidity}%</p>
+              </div>
+            ))}
+          </div>
         )}
-    </div>
-);
+      </div>
+    </>
+  );
 }
 
 export default WeatherForecast;

@@ -1,3 +1,29 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.forecast{
+    &__title-container{
+        margin-top: 1rem;
+        display: flex;
+        align-items: baseline;
+    }
+    &__title{
+        text-decoration: underline;
+        font-size: 2rem
+    }
+    &__container{
+        padding: 1rem 0rem;
+    }
+    &__days{
+        color: $dark-purple;
+         text-align: center;
+         font-size: 1.5rem;
+    }
+    &__header{
+        padding: 0.5rem 0rem;
+        color: $light-purple;
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+}

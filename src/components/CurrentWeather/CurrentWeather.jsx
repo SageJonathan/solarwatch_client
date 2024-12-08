@@ -92,17 +92,6 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
         </div>
       )}
       <div>
-        {weatherData && (
-          <div className="weather__title-container">
-            <img
-              src={undoIcon}
-              alt="toggle weather"
-              className="weather__toggle"
-              onClick={handleToggleDisplay}
-            />
-            <h2 className="weather__title">Current Weather</h2>
-          </div>
-        )}
         {error && <p className="error">{error}</p>}
         {weatherData && (
           <div className="weather">

@@ -61,8 +61,8 @@ function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
                     <div key={index} className="">
                         <h3>{day.day}</h3>
                         <p>Temperature: {day.averageTemperature} °C</p>
-                        <p>Weather {day.weather}</p>
-                        <p>Visibility {day.averageVisibility} meters</p>
+                        <p>Weather: {day.weather}</p>
+                        <p>Visibility:{day.averageVisibility} meters</p>
                         <p>Humidity:{day.averageHumidity}%</p>
                     </div>
                 ))}

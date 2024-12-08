@@ -19,14 +19,14 @@ function CurrentSolar({ solarData, locationName, advCoordinates }) {
   };
 
   const solarEvents = [
-    { label: 'Sunrise', value: solarData.sunrise, tooltip: 'When the sun rises.' },
-    { label: 'Sunset', value: solarData.sunset, tooltip: 'When the sun sets.' },
-    { label: 'First Light', value: solarData.first_light, tooltip: 'The first visible light of day.' },
-    { label: 'Last Light', value: solarData.last_light, tooltip: 'The last visible light of day.' },
-    { label: 'Dawn', value: solarData.dawn, tooltip: 'The time before sunrise when it\'s light.' },
-    { label: 'Dusk', value: solarData.dusk, tooltip: 'The time after sunset when it\'s still light.' },
-    { label: 'Solar Noon', value: solarData.solar_noon, tooltip: 'When the sun is at its highest point.' },
-    { label: 'Golden Hour', value: solarData.golden_hour, tooltip: 'The period shortly after sunrise or before sunset, ideal for photography.' },
+    { label: 'Sunrise', value: solarData.sunrise, tooltip: 'Sunrise time.' },
+    { label: 'Sunset', value: solarData.sunset, tooltip: 'Sunset time.' },
+    { label: 'First Light', value: solarData.first_light, tooltip: 'First light of the day.' },
+    { label: 'Last Light', value: solarData.last_light, tooltip: 'Last light of the day.' },
+    { label: 'Dawn', value: solarData.dawn, tooltip: 'Pre-sunrise light.' },
+    { label: 'Dusk', value: solarData.dusk, tooltip: 'Post-sunset light.' },
+    { label: 'Solar Noon', value: solarData.solar_noon, tooltip: 'Sun at its highest point.' },
+    { label: 'Golden Hour', value: solarData.golden_hour, tooltip: 'Best light for photography.' },    
   ];
 
   const rows = [];

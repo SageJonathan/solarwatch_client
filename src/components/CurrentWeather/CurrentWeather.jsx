@@ -58,7 +58,7 @@ function CurrentWeather({ localCoordinates, advCoordinates, gpsCoordinates }) {
         { label: "Humidity", value: `${weatherData.humidity}%` },
         {
           label: "Visibility",
-          value: `${(weatherData.visibility / 1000)?.toFixed(2)} km`,
+          value: `${(weatherData.visibility / 1000)} km`,
         },
         { label: "Pressure", value: `${weatherData.pressure} hPa` },
         { label: "Cloudiness", value: `${weatherData.cloudiness}%` },

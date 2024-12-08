@@ -80,12 +80,12 @@ function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
             {weatherData.map((day, index) => (
               <div key={index} className="forecast__container">
                 <h3 className="forecast__days">{day.day}</h3>
-                <p className="forecast__header">
-                  Temperature: {day.averageTemperature} °C
-                </p>
                 <p className="forecast__header">Weather: {day.weather}</p>
                 <p className="forecast__header">
-                  Visibility: {(day.averageVisibility / 1000)?.toFixed(2)}km
+                Temperature: {day.averageTemperature} °C
+                </p>
+                <p className="forecast__header">
+                  Visibility: {(day.averageVisibility / 100)}km
                 </p>
                 <p className="forecast__header">
                   Humidity: {day.averageHumidity}%

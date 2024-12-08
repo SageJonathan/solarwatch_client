@@ -48,17 +48,30 @@ function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
 
     return (
         <div className="weather-forecast">
-            <button onClick={handleButtonClick} className="fetch-weather-button">
-                Get Weather Data
-            </button>
+        <button onClick={handleButtonClick} className="fetch-weather-button">
+            Get Weather Data
+        </button>
 
-            {loading && <div className="loading">Loading...</div>}
+        {loading && <div className="loading">Loading...</div>}
 
-            {error && <div className="error">{error}</div>}
+        {error && <div className="error">{error}</div>}
 
-           
-        </div>
-    );
+        {/* Display the weather data for the next 4 days */}
+        {weatherData && (
+            <div className="weather-info">
+                {weatherData.map((day, index) => (
+                    <div key={index} className="weather-day">
+                        <h3>{day.day}</h3>
+                        <p><strong>Average Temperature:</strong> {day.averageTemperature} °C</p>
+                        <p><strong>Weather:</strong> {day.weather}</p>
+                        <p><strong>Average Visibility:</strong> {day.averageVisibility} meters</p>
+                        <p><strong>Average Humidity:</strong> {day.averageHumidity}%</p>
+                    </div>
+                ))}
+            </div>
+        )}
+    </div>
+);
 }
 
 export default WeatherForecast;

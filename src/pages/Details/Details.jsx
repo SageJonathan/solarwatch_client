@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./Details.scss";
-import CurrentSolar from "../../components/CurrentSolar/CurrnetSolar";
+import CurrentSolar from "../../components/CurrentSolar/CurrentSolar";
 import CurrentWeather from "../../components/CurrentWeather/CurrentWeather";
 import WeatherForecast from "../../components/WeatherForecast/WeatherForecast";
 

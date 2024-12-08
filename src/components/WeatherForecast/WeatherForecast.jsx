@@ -5,19 +5,60 @@ import undoIcon from "../../assets/icons/undo.png";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
-function WeatherForecast ({ localCoordinates, advCoordinates, gpsCoordinates }) {
+function WeatherForecast({ localCoordinates, advCoordinates, gpsCoordinates }) {
+    const [weatherData, setWeatherData] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-    // coordinates
+    const getCoordinates = () => {
+        console.log(localCoordinates, advCoordinates, gpsCoordinates);
+        return localCoordinates || advCoordinates || gpsCoordinates || null;
+    };
 
-    // Axios call
+    const handleButtonClick = () => {
+        const coordinates = getCoordinates();
+        if (coordinates) {
+            weatherApiCall(coordinates);
+        } else {
+            alert("Unable to find coordinates");
+        }
+    };
 
-    // Loadng state
+    const weatherApiCall = async (coordinates) => {
+        setLoading(true);
+        setError(null);
 
-    // Button click 
+        try {
+            const response = await axios.get(`${baseUrl}/forecastSearch`, { 
+                params: {
+                    lat: coordinates.latitude || coordinates.lat,
+                    lng: coordinates.longitude || coordinates.lng,
+                },
+            });
 
-    // Toggle
-    return ( <>
-    
-    </>)
+            setWeatherData(response.data);
+        } catch (err) {
+            console.error("Error fetching weather data:", err);
+            setError("Failed to fetch weather data. Please try again.");
+        } finally {
+            setLoading(false);
+            console.log(weatherData)
+        }
+    };
+
+    return (
+        <div className="weather-forecast">
+            <button onClick={handleButtonClick} className="fetch-weather-button">
+                Get Weather Data
+            </button>
+
+            {loading && <div className="loading">Loading...</div>}
+
+            {error && <div className="error">{error}</div>}
+
+           
+        </div>
+    );
 }
-export  default WeatherForecast;
+
+export default WeatherForecast;

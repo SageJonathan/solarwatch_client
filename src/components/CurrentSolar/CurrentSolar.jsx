@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTooltip } from '../../utils/tooltip';  
-import './SolarForecast.scss';
+import './CurrentSolar.scss';
 import infoIcon from "../../assets/icons/info.png"; 
 
 function CurrentSolar({ solarData, locationName, advCoordinates }) {

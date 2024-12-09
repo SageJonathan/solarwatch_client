@@ -3,19 +3,23 @@
 @use "../../styles/partials/mixins" as *;
 
 .tooltip__content {
+  position: fixed;
+  bottom: auto;  
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  @include tablet{
     position: absolute;
-    bottom: 30px;  
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    white-space: nowrap;
-    z-index: 10;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    bottom: 30px; 
+  }
   }
   
   .info-icon {
